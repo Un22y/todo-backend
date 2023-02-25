@@ -1,0 +1,23 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "new_connection",
+            "group": "public",
+            "database": "test",
+            "socketPath": "/var/run/postgresql/.s.PGSQL.5432",
+            "username": "postgres",
+            "password": "password"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "PostgreSQL",
+            "connectString": "postgres://Un22y@ep-black-pond-053520.eu-central-1.aws.neon.tech/neondb",
+            "name": "neon_connection"
+        }
+    ]
+}
