@@ -16,4 +16,4 @@ app.use('/api', boardRouter);
 app.use('/api', taskRouter);
 
 
-app.listen(PORT, () => console.log(`SERVER STARTED ON PORT ${PORT}`))
+app.listen('https://todo-backend-git-master-un22y.vercel.app/', () => {});
