@@ -10,7 +10,6 @@ router.get('/boards', boardController.getAllBoards)
 router.get('/boards/:id', boardController.getOneBoard)
 
 router.put('/boards', boardController.updateBoards)
-router.put('/boards/:id', boardController.updateBoardsOrder)
 
 router.delete('/boards/:id', boardController.deleteBoard)
 

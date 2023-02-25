@@ -26,13 +26,7 @@ class BoardController {
         const board = neondb`SELECT * FROM boards WHERE id = ${obj.id}`
         res.json(board[0])
     }
-    async updateBoardsOrder(req,res) {
-        const id = req.params.id;
-        const {neworder_id} = req.body
-        const board = await neondb`UPDATE boards SET order_id = ${neworder_id} WHERE id = ${id}`
-        const boards = await neondb`SELECT * FROM boards`
-        res.send(boards)
-    }
+
     async deleteBoard(req,res) {
         const id = req.params.id
         await neondb`DELETE FROM tasks WHERE board_id =${id}`;
