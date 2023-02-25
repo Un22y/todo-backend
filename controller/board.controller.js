@@ -25,8 +25,8 @@ class BoardController {
     }
     async updateBoardsOrder(req,res) {
         const id = req.params.id;
-        const order_id = req.body.order_id
-        const board = await neondb`UPDATE boards SET order_id = ${order_id} WHERE id = ${id}`
+        const {neworder_id} = req.body
+        const board = await neondb`UPDATE boards SET order_id = ${neworder_id} WHERE id = ${id}`
         const boards = await neondb`SELECT * FROM boards`
         res.send(boards)
     }
