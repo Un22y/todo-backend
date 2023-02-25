@@ -21,10 +21,10 @@ class TaskController {
     async updateTasks(req,res) {
         const obj = JSON.parse(req.body);
         for (let prop in obj) {
-            await neondb`UPDATE boards SET ${prop} = ${obj[prop]} where id = ${obj.id}`
+            await neondb`UPDATE tasks SET ${prop} = ${obj[prop]} where id = ${obj.id}`
         }
-        const board = neondb`SELECT * FROM boards WHERE id = ${obj.id}`
-        res.json(board[0])
+        const task = neondb`SELECT * FROM tasks WHERE id = ${obj.id}`
+        res.json(task[0])
     }
 
     async deleteTask(req,res) {
