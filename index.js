@@ -12,3 +12,5 @@ app.use(express.json())
 
 app.use('/api', boardRouter);
 app.use('/api', taskRouter);
+
+app.listen('https://todo-backend-git-master-un22y.vercel.app/', () => {});
