@@ -19,8 +19,11 @@ class BoardController {
         res.json(board[0])
     }
     async updateBoards(req,res) {
-        const {id, name} = req.body;
-        const board = await neondb`UPDATE boards SET name = ${name} where id = ${id} RETURNING *`
+        const obj = JSON.parse(req.body);
+        for (let prop in obj) {
+            await neondb`UPDATE boards SET ${prop} = ${obj[prop]} where id = ${obj.id}`
+        }
+        const board = neondb`SELECT * FROM boards WHERE id = ${obj.id}`
         res.json(board[0])
     }
     async updateBoardsOrder(req,res) {
