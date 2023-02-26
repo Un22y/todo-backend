@@ -1,4 +1,5 @@
-const db = require('../database/db')
+const db = require('../database/db');
+const { json } = require('../database/neondb');
 const neondb = require('../database/neondb')
 
 
@@ -24,7 +25,7 @@ class TaskController {
             await neondb`UPDATE tasks SET ${prop} = ${obj[prop]} where id = ${obj.id}`
         }
         const task = neondb`SELECT * FROM tasks WHERE id = ${obj.id}`
-        res.send(task[0])
+        res.send(JSON.stringify(task[0]))
     }
 
     async deleteTask(req,res) {
