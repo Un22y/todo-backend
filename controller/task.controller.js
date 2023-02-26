@@ -1,5 +1,4 @@
 const db = require('../database/db');
-const { json } = require('../database/neondb');
 const neondb = require('../database/neondb')
 
 
