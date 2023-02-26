@@ -24,6 +24,11 @@ class BoardController {
             await neondb`UPDATE boards SET ${prop} = ${obj[prop]} where id = ${obj.id}`
         }
         const board = neondb`SELECT * FROM boards WHERE id = ${obj.id}`
+        res.writeHead(200, 
+            {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            });
         res.json(board[0])
     }
 
