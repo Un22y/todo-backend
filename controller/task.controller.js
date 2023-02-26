@@ -13,11 +13,11 @@ class TaskController {
         const tasks = await neondb`SELECT * FROM tasks ORDER BY is_done, id`;
         res.send(tasks)
     }
-    async getOneTask(req,res) {
-        const id = req.params.id
-        const task = await neondb`SELECT * FROM tasks WHERE id = ${id}`
-        res.json(task[0])
-    }
+    // async getOneTask(req,res) {
+    //     const id = req.params.id
+    //     const task = await neondb`SELECT * FROM tasks WHERE id = ${id}`
+    //     res.json(task[0])
+    // }
     async updateTasks(req,res) {
         const obj = JSON.parse(req.body);
         for (let prop in obj) {
