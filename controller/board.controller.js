@@ -29,7 +29,7 @@ class BoardController {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*'
             });
-        res.json(board[0])
+        res.json(board)
     }
 
     async deleteBoard(req,res) {
