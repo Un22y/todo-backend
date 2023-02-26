@@ -24,7 +24,7 @@ class TaskController {
             await neondb`UPDATE tasks SET ${prop} = ${obj[prop]} where id = ${obj.id}`
         }
         const task = neondb`SELECT * FROM tasks WHERE id = ${obj.id}`
-        res.json(task[0])
+        res.send(task[0])
     }
 
     async deleteTask(req,res) {
