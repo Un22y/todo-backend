@@ -1,5 +1,6 @@
 create TABLE boards(
     id SERIAL PRIMARY KEY NOT NULL,
+    order_id SERIAL NOT NULL,
     name VARCHAR(255)
 );
 

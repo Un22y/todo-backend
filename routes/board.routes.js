@@ -7,7 +7,6 @@ const router = new Router()
 router.post('/boards', boardController.createBoard)
 
 router.get('/boards', boardController.getAllBoards)
-router.get('/boards/:id', boardController.getOneBoard)
 
 router.put('/boards', boardController.updateBoards)
 
